@@ -1,0 +1,14 @@
+plugin_kafka {
+  connection {
+    bootstrap_hosts = ["10.3.64.223:9192"]
+    sasl {
+      mechanism = plain
+      username = "username"
+      password = "password"
+    }
+  }
+
+  hooks = [
+    {endpoint = client.connect}
+  ]
+}
