@@ -35,7 +35,7 @@ plugin_kafka {
       kafka_topic = emqx_msg_publish
       kafka_message = {
         timestamp = "${.timestamp}"
-        value = "${.}"
+        value = "${.payload}"
         key = "${.clientid}"
       }
     }
