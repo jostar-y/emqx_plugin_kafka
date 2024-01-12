@@ -19,8 +19,6 @@
     , on_query_async/4
 ]).
 
--include_lib("emqx/include/logger.hrl").
-
 query_mode(_) ->
     simple_async_internal_buffer.
 

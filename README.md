@@ -22,8 +22,8 @@ _build/default/emqx_plugrel/emqx_plugin_kafka-<vsn>.tar.gz
 plugin_kafka {
   // required
   connection {
-    // Kafka client id.
-    // optional   default:client
+    // Kafka client id: "emqx_plugin:kafka_client:${client_id}"
+    // optional   default:"emqx_plugin:kafka_client:emqx_plugin_kafka_connection"
     client_id = "kafka_client"
     // Kafka address.
     // required

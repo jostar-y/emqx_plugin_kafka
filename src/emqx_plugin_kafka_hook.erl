@@ -232,8 +232,10 @@ query(
     EvtMsg,
     #{channel_id := ChannelId}
 ) ->
-    Ret = emqx_resource:query(emqx_plugin_kafka_util:resource_id(), {ChannelId, EvtMsg}),
-    query_ret(Ret, EvtMsg).
+    query_ret(
+        emqx_resource:query(emqx_plugin_kafka_util:resource_id(), {ChannelId, EvtMsg}),
+        EvtMsg
+    ).
 
 query_ret({_, {ok, _}}, _) ->
     ok;
