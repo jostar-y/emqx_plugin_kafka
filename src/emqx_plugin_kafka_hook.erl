@@ -217,11 +217,11 @@ on_message_acked(ClientInfo, Message, Opts = #{filter := Filter}) ->
 %%% External functions
 %%%===================================================================
 
-match_topic(#message{topic = <<"$SYS/">>}, _) ->
-    false;
 match_topic(_, <<$#, _/binary>>) ->
     false;
 match_topic(_, <<$+, _/binary>>) ->
+    false;
+match_topic(#message{topic = <<"$SYS/", _/binary>>}, _) ->
     false;
 match_topic(#message{topic = Topic}, Filter) ->
     emqx_topic:match(Topic, Filter);
