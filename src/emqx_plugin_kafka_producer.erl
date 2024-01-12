@@ -75,6 +75,7 @@ on_stop(_InstId, #{client_id := ClientId, channels := Channels}) ->
     }),
     maps:foreach(fun(_, ChannelState) -> remove_producers(ClientId, ChannelState) end, Channels),
     deallocate_client(ClientId),
+    persistent_term:erase({?EMQX_PLUGIN_KAFKA_APP, ?EMQX_PLUGIN_KAFKA_CHANNELS}),
     ok.
 
 on_add_channel(
