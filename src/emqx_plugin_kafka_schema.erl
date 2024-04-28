@@ -14,7 +14,7 @@ roots() -> [plugin_kafka].
 
 fields(plugin_kafka) ->
     [
-        {connection, ?HOCON(?R_REF(connection), #{desc => ?DESC("connect_timeout")})},
+        {connection, ?HOCON(?R_REF(connection), #{desc => ?DESC("connection")})},
         {producer, ?HOCON(?R_REF(producer), #{desc => ?DESC("connect_timeout")})},
         {hooks, ?HOCON(?ARRAY(?R_REF(hook)),
             #{
@@ -35,11 +35,6 @@ fields(connection) ->
             #{
                 default => <<"5s">>,
                 desc => ?DESC("connect_timeout")
-            })},
-        {client_id, ?HOCON(string(),
-            #{
-                default => <<"emqx_plugin_kafka_connection">>,
-                desc => ?DESC("client_id")
             })},
         {connection_strategy, ?HOCON(enum([per_partition, per_broker]),
             #{
