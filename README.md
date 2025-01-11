@@ -131,3 +131,9 @@ Some examples in the directory `priv/example/`.
 
 - Default path： `emqx/etc/emqx_plugin_kafka.hocon`
 - Attach to path:  set system environment variables  `export EMQX_PLUGIN_KAFKA_CONF="absolute_path"`
+
+## Attention
+[scalability-and-performance](https://docs.emqx.com/en/emqx/v5.7/getting-started/feature-comparison.html#scalability-and-performance)
+![image](https://github.com/user-attachments/assets/5304cba5-63ce-4b39-971d-a5559b3154c7)
+
+The scalability and performance of open source versions after 5.6 have been limited, so the plug-in is no longer updated to support versions after 5.6
