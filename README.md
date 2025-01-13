@@ -1,6 +1,6 @@
 # emqx_plugin_kafka
 
-Kafka plugin for EMQX >= V5.4.0
+Kafka plugin for EMQX >= V5.4.0 && EMQX < V5.7.0
 
 ## Usage
 
